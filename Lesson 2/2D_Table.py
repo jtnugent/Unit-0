@@ -20,7 +20,11 @@ def main():
     headers = print(f"{"Year":<10}{"1750":<10}{"1800":<10}\
         {"1850":<10}{"1900":<10}{"1950":<10}\
         {"2050":<10}")
-
+    for row in range(len(populations)):
+        print(f"{continents[row]:<19}",end="")
+        for column in range(len(populations[0])):
+            print(f"{populations[row][column]:<10}",end="")
+        print()
 
 
 

@@ -25,7 +25,6 @@ def main():
         for column in range(len(populations[0])):
             print(f"{populations[row][column]:<10}",end="")
         print()
-
-
+    print(headers)
 
 main()

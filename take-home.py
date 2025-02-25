@@ -1,7 +1,7 @@
 
 
 def player_address():
-    address = str(input("What's your address?"))
+    address = str.upper(input("What's your address?"))
     return address
 def province_check(address):
     provinces = {
@@ -24,10 +24,22 @@ def province_check(address):
         'Y': 'Yukon'
     }
     user_province = provinces[address[0]]
-    print(user_province)
-
+    if address[1] == 0:
+        region = "Rural"
+    else:
+        region = "Urban"
+    return user_province, region
 
 
 def main():
-    address = player_address()
-    province,region = province_check(address)
+    while True:
+        try:
+            address = player_address()
+            print("jksd")
+            province, region = province_check(address)
+            print(f"You are from the province {province}, and you're in a {region} area.")
+            
+        except KeyError:
+            print("Please Enter a Valid Address")
+    
+main()

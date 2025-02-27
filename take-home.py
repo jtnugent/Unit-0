@@ -3,6 +3,7 @@
 def player_address():
     address = str.upper(input("What's your address?"))
     return address
+
 def province_check(address):
     provinces = {
         'A': 'Newfoundland',
@@ -35,11 +36,13 @@ def main():
     while True:
         try:
             address = player_address()
-            if len(address) != 6:
-                print
-            province, region = province_check(address)
-            print(f"You are from the province {province}, and you're in a {region} area.")
-            break
+            if len(address) == 7 and address[3] == ' ':
+                province, region = province_check(address)
+                print(f"You are from the province {province}, and you're in a {region} area.")
+                break
+            else:
+                print("Please Enter a Valid Address")
+
         except KeyError:
             print("Please Enter a Valid Address")
     

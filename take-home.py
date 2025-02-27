@@ -35,10 +35,11 @@ def main():
     while True:
         try:
             address = player_address()
-            print("jksd")
+            if len(address) != 6:
+                break
             province, region = province_check(address)
             print(f"You are from the province {province}, and you're in a {region} area.")
-            
+            break
         except KeyError:
             print("Please Enter a Valid Address")
     

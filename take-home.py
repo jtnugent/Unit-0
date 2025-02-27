@@ -36,7 +36,7 @@ def main():
         try:
             address = player_address()
             if len(address) != 6:
-                break
+                print
             province, region = province_check(address)
             print(f"You are from the province {province}, and you're in a {region} area.")
             break
